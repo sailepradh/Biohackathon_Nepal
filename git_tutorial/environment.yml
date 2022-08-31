@@ -10,7 +10,7 @@ dependencies:
   - sra-tools=2.10.1
   - snakemake=7.3.8
   - multiqc=1.12
-  - bowtie2=2.4.5
+  - bowtie2=2.2.5
   - tbb=2020.2
   - samtools=1.15.1
   - subread=2.0.1
