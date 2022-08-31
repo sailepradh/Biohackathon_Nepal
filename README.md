@@ -1,2 +1,3 @@
 # Biohackathon_Nepal
-Github repo for the tutorial prepared for BioHackathon 
+This github repo contains tutorial information prepared for prepared for **BioHackathon Nepal** scheduled September 2022. This repo contains various tools for making a reproducible bioinformatic pipeline.  
+
