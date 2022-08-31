@@ -1,0 +1,13 @@
+# Ignore these directories:
+/git_tutorial/results
+/git_tutorial/intermediate
+
+# Ignore temporary files
+/git_tutorial/.tmp
+
+# Ignore all files in the data/ directory
+# Exclude the metadata file by prefixing it with an exclamation mark
+/git_tutorial/data/*
+
+# Exclude the metadata file by prefixing it with an exclamation mark
+/git_tutorial/!data/metadata.txt
