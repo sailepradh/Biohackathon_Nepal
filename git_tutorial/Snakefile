@@ -151,7 +151,7 @@ rule align_to_genome:
         # This gives the base name for the genome index, i.e. "intermediate/some_id"
         # rather than "intermediate/some_id.*.bt2"
         indexBase=$(echo {input.index[0]} | sed 's/.1.bt2//g')
-        bowtie2 -x $indexBase -U {input.fastq} > {output} 2> {log}
+        bowtie2 --very-sensitive-local -x $indexBase -U {input.fastq} > {output} 2> {log}
         """
 
 rule sort_bam:

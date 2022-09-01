@@ -1,0 +1,6 @@
+# Ignore these directories:
+/git_tutorial/results
+/git_tutorial/intermediate
+
+# Ignore temporary files
+git_tutorial/.tmp
