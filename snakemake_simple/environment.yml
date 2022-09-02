@@ -17,3 +17,4 @@ dependencies:
   - wget=1.20.1
   - xorg-libxrender
   - xorg-libxpm
+  - seqtk=1.3

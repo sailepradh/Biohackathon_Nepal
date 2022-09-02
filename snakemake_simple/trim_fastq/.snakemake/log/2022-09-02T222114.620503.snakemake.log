@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 1 of /mnt/c/Users/235488/OneDrive - Region Skåne/Saile/Biohackathon_Nepal/snakemake_simple/trim_fastq/Snakefile:
+Missing input files for rule trim_fastq:
+a.fastq

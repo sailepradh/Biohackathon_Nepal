@@ -16,3 +16,6 @@
 # Ignore the shell lessondata
 /shell-lesson-data/
 
+# Ignore the fastq.gz and fastqfiles
+/snakemake_simple/trim_fastq/*.gz
+/snakemake_simple/trim_fastq/*.fastq
