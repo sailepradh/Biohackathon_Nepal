@@ -10,12 +10,12 @@ We follow a live example of the pipeline development with example of a case stud
     * Git
     * Environment Management
         * Conda
-	* Workflow Management
-	    * Snakemake and Nextflow
-	* Report and Documentation
-	    * R markdown and Jupyter
-	* Containerazation
-		* Docker and Singularity
+    * Workflow Management
+	* Snakemake and Nextflow
+    * Report and Documentation
+	* R markdown and Jupyter
+    * Containerazation
+	* Docker and Singularity
 ______________________________________________________________________
 Git
 * Tool for version control and collaborating on code
