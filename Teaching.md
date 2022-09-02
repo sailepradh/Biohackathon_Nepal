@@ -12,20 +12,20 @@ We follow a live example of the pipeline development with example of a case stud
         * Conda
 	* Workflow Management
 	    * Snakemake and Nextflow
-	    * Report and Documentation
-	        * R markdown and Jupyter
-		* Containerazation
-		    * Docker and Singularity
-		    ______________________________________________________________________
-		    Git
-		    * Tool for version control and collaborating on code
-		    * Track changes and edits
-		    * Commit changes and
-		    * pushing the commit to the remote repository
-		    * Tracking all the edits and handle potential conflicts
-		    * Using cloud based hosting such as Github or bitbucket
-		    * Distribute the code
-
+	* Report and Documentation
+	    * R markdown and Jupyter
+	* Containerazation
+		* Docker and Singularity
+______________________________________________________________________
+Git
+* Tool for version control and collaborating on code
+* Track changes and edits
+* Commit changes and
+* pushing the commit to the remote repository
+* Tracking all the edits and handle potential conflicts
+* Using cloud based hosting such as Github or bitbucket
+* Distribute the code		    
+			
 Conda
 * Package and environment management tool
 * conda install ...
@@ -43,4 +43,7 @@ Snakemake
 * Small subset of data and then real one in cluster
 * Works on files (rather than for streams, reading/ writing from database)
 * Specially with next-generation sequencing data which is computational expensive operations on large files
-* WMS are tools for reproducbible 
+* WMS are tools for reproducbible workflow
+
+* Example MRSA workflow
+* Snakemake example  

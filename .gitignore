@@ -1,6 +1,7 @@
 # Ignore these directories:
-/git_tutorial/results
-/git_tutorial/intermediate
+/snakemake_paper/results
+/snakemake_paper/intermediate
+/snakemake_tutorial/data/*
 
 # Ignore temporary files
 /git_tutorial/.tmp
@@ -11,3 +12,7 @@
 
 # Exclude the metadata file by prefixing it with an exclamation mark
 /git_tutorial/!data/metadata.txt
+
+# Ignore the shell lessondata
+/shell-lesson-data/
+

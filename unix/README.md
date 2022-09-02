@@ -1,0 +1,1 @@
+I used the software carpentary tutorial from [here](https://swcarpentry.github.io/shell-novice/)

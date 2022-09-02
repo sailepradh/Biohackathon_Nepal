@@ -1,0 +1,267 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                     count    min threads    max threads
+--------------------  -------  -------------  -------------
+align_to_genome             3              1              1
+all                         1              1              1
+fastqc                      3              1              1
+generate_count_table        1              1              1
+generate_rulegraph          1              1              1
+get_SRA_by_accession        3              1              1
+get_genome_fasta            1              1              1
+get_genome_gff3             1              1              1
+index_genome                1              1              1
+multiqc                     1              1              1
+sort_bam                    3              1              1
+total                      19              1              1
+
+Select jobs to execute...
+
+[Fri Sep  2 18:37:37 2022]
+rule get_SRA_by_accession:
+    output: data/raw_internal/SRR935092.fastq.gz
+    jobid: 12
+    wildcards: sra_id=SRR935092
+    resources: tmpdir=/tmp
+
+[Fri Sep  2 18:40:31 2022]
+Finished job 12.
+1 of 19 steps (5%) done
+Select jobs to execute...
+
+[Fri Sep  2 18:40:31 2022]
+rule get_genome_fasta:
+    output: data/raw_external/NCTC8325.fa.gz
+    log: results/log/get_genome_fasta/NCTC8325.log
+    jobid: 6
+    wildcards: genome_id=NCTC8325
+    resources: tmpdir=/tmp
+
+[Fri Sep  2 18:40:32 2022]
+Finished job 6.
+2 of 19 steps (11%) done
+Select jobs to execute...
+
+[Fri Sep  2 18:40:33 2022]
+rule get_SRA_by_accession:
+    output: data/raw_internal/SRR935090.fastq.gz
+    jobid: 4
+    wildcards: sra_id=SRR935090
+    resources: tmpdir=/tmp
+
+[Fri Sep  2 18:43:14 2022]
+Finished job 4.
+3 of 19 steps (16%) done
+Select jobs to execute...
+
+[Fri Sep  2 18:43:15 2022]
+rule generate_rulegraph:
+    output: results/rulegraph.png
+    jobid: 18
+    resources: tmpdir=/tmp
+
+[Fri Sep  2 18:43:16 2022]
+Finished job 18.
+4 of 19 steps (21%) done
+Select jobs to execute...
+
+[Fri Sep  2 18:43:16 2022]
+rule get_genome_gff3:
+    output: data/raw_external/NCTC8325.gff3.gz
+    log: results/log/get_genome_gff/NCTC8325.log
+    jobid: 13
+    wildcards: genome_id=NCTC8325
+    resources: tmpdir=/tmp
+
+[Fri Sep  2 18:43:17 2022]
+Finished job 13.
+5 of 19 steps (26%) done
+Select jobs to execute...
+
+[Fri Sep  2 18:43:17 2022]
+rule fastqc:
+    input: data/raw_internal/SRR935092.fastq.gz
+    output: results/SRR935092_fastqc.html, intermediate/SRR935092_fastqc.zip
+    jobid: 17
+    wildcards: id=SRR935092
+    resources: tmpdir=/tmp
+
+[Fri Sep  2 18:43:21 2022]
+Finished job 17.
+6 of 19 steps (32%) done
+Select jobs to execute...
+
+[Fri Sep  2 18:43:21 2022]
+rule fastqc:
+    input: data/raw_internal/SRR935090.fastq.gz
+    output: results/SRR935090_fastqc.html, intermediate/SRR935090_fastqc.zip
+    jobid: 15
+    wildcards: id=SRR935090
+    resources: tmpdir=/tmp
+
+[Fri Sep  2 18:43:25 2022]
+Finished job 15.
+7 of 19 steps (37%) done
+Select jobs to execute...
+
+[Fri Sep  2 18:43:25 2022]
+rule index_genome:
+    input: data/raw_external/NCTC8325.fa.gz
+    output: intermediate/NCTC8325.1.bt2, intermediate/NCTC8325.2.bt2, intermediate/NCTC8325.3.bt2, intermediate/NCTC8325.4.bt2, intermediate/NCTC8325.rev.1.bt2, intermediate/NCTC8325.rev.2.bt2
+    log: results/logs/index_genome/NCTC8325.log
+    jobid: 5
+    wildcards: genome_id=NCTC8325
+    resources: tmpdir=/tmp
+
+[Fri Sep  2 18:43:29 2022]
+Finished job 5.
+8 of 19 steps (42%) done
+Select jobs to execute...
+
+[Fri Sep  2 18:43:29 2022]
+rule align_to_genome:
+    input: data/raw_internal/SRR935092.fastq.gz, intermediate/NCTC8325.1.bt2, intermediate/NCTC8325.2.bt2, intermediate/NCTC8325.3.bt2, intermediate/NCTC8325.4.bt2, intermediate/NCTC8325.rev.1.bt2, intermediate/NCTC8325.rev.2.bt2
+    output: intermediate/SRR935092.bam
+    log: results/logs/align_to_genome/SRR935092.log
+    jobid: 11
+    wildcards: sra_id=SRR935092
+    resources: tmpdir=/tmp
+
+[Fri Sep  2 18:43:31 2022]
+Finished job 11.
+9 of 19 steps (47%) done
+Select jobs to execute...
+
+[Fri Sep  2 18:43:31 2022]
+rule sort_bam:
+    input: intermediate/SRR935092.bam
+    output: intermediate/SRR935092.sorted.bam
+    jobid: 10
+    wildcards: sra_id=SRR935092
+    resources: tmpdir=/tmp
+
+[Fri Sep  2 18:43:31 2022]
+Finished job 10.
+10 of 19 steps (53%) done
+Removing temporary output intermediate/SRR935092.bam.
+Select jobs to execute...
+
+[Fri Sep  2 18:43:32 2022]
+rule get_SRA_by_accession:
+    output: data/raw_internal/SRR935091.fastq.gz
+    jobid: 9
+    wildcards: sra_id=SRR935091
+    resources: tmpdir=/tmp
+
+[Fri Sep  2 18:46:15 2022]
+Finished job 9.
+11 of 19 steps (58%) done
+Select jobs to execute...
+
+[Fri Sep  2 18:46:16 2022]
+rule align_to_genome:
+    input: data/raw_internal/SRR935090.fastq.gz, intermediate/NCTC8325.1.bt2, intermediate/NCTC8325.2.bt2, intermediate/NCTC8325.3.bt2, intermediate/NCTC8325.4.bt2, intermediate/NCTC8325.rev.1.bt2, intermediate/NCTC8325.rev.2.bt2
+    output: intermediate/SRR935090.bam
+    log: results/logs/align_to_genome/SRR935090.log
+    jobid: 3
+    wildcards: sra_id=SRR935090
+    resources: tmpdir=/tmp
+
+[Fri Sep  2 18:46:17 2022]
+Finished job 3.
+12 of 19 steps (63%) done
+Select jobs to execute...
+
+[Fri Sep  2 18:46:17 2022]
+rule sort_bam:
+    input: intermediate/SRR935090.bam
+    output: intermediate/SRR935090.sorted.bam
+    jobid: 2
+    wildcards: sra_id=SRR935090
+    resources: tmpdir=/tmp
+
+[Fri Sep  2 18:46:18 2022]
+Finished job 2.
+13 of 19 steps (68%) done
+Removing temporary output intermediate/SRR935090.bam.
+Select jobs to execute...
+
+[Fri Sep  2 18:46:18 2022]
+rule align_to_genome:
+    input: data/raw_internal/SRR935091.fastq.gz, intermediate/NCTC8325.1.bt2, intermediate/NCTC8325.2.bt2, intermediate/NCTC8325.3.bt2, intermediate/NCTC8325.4.bt2, intermediate/NCTC8325.rev.1.bt2, intermediate/NCTC8325.rev.2.bt2
+    output: intermediate/SRR935091.bam
+    log: results/logs/align_to_genome/SRR935091.log
+    jobid: 8
+    wildcards: sra_id=SRR935091
+    resources: tmpdir=/tmp
+
+[Fri Sep  2 18:46:19 2022]
+Finished job 8.
+14 of 19 steps (74%) done
+Select jobs to execute...
+
+[Fri Sep  2 18:46:19 2022]
+rule sort_bam:
+    input: intermediate/SRR935091.bam
+    output: intermediate/SRR935091.sorted.bam
+    jobid: 7
+    wildcards: sra_id=SRR935091
+    resources: tmpdir=/tmp
+
+[Fri Sep  2 18:46:20 2022]
+Finished job 7.
+15 of 19 steps (79%) done
+Removing temporary output intermediate/SRR935091.bam.
+Select jobs to execute...
+
+[Fri Sep  2 18:46:20 2022]
+rule generate_count_table:
+    input: intermediate/SRR935090.sorted.bam, intermediate/SRR935091.sorted.bam, intermediate/SRR935092.sorted.bam, data/raw_external/NCTC8325.gff3.gz
+    output: results/tables/counts.tsv
+    jobid: 1
+    resources: tmpdir=/tmp
+
+[Fri Sep  2 18:46:20 2022]
+Finished job 1.
+16 of 19 steps (84%) done
+Select jobs to execute...
+
+[Fri Sep  2 18:46:20 2022]
+rule fastqc:
+    input: data/raw_internal/SRR935091.fastq.gz
+    output: results/SRR935091_fastqc.html, intermediate/SRR935091_fastqc.zip
+    jobid: 16
+    wildcards: id=SRR935091
+    resources: tmpdir=/tmp
+
+[Fri Sep  2 18:46:24 2022]
+Finished job 16.
+17 of 19 steps (89%) done
+Select jobs to execute...
+
+[Fri Sep  2 18:46:24 2022]
+rule multiqc:
+    input: intermediate/SRR935090_fastqc.zip, intermediate/SRR935091_fastqc.zip, intermediate/SRR935092_fastqc.zip
+    output: results/multiqc.html, intermediate/multiqc_general_stats.txt
+    log: results/logs/multiqc/multiqc.log
+    jobid: 14
+    resources: tmpdir=/tmp
+
+[Fri Sep  2 18:46:29 2022]
+Finished job 14.
+18 of 19 steps (95%) done
+Select jobs to execute...
+
+[Fri Sep  2 18:46:29 2022]
+localrule all:
+    input: results/tables/counts.tsv, results/multiqc.html, results/rulegraph.png
+    jobid: 0
+    resources: tmpdir=/tmp
+
+[Fri Sep  2 18:46:29 2022]
+Finished job 0.
+19 of 19 steps (100%) done
+Complete log: .snakemake/log/2022-09-02T183736.336588.snakemake.log
