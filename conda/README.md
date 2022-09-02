@@ -1,0 +1,1 @@
+Here is the [link](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html) to how to install conda in your machine 
