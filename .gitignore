@@ -21,4 +21,4 @@
 /snakemake_simple/trim_fastq/*.gz
 /snakemake_simple/trim_fastq/*.fastq
 /snakemake_simple/trim_fastq/.snakemake
-*.ppt
+*.pptx
