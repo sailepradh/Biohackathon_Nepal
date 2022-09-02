@@ -1,7 +1,8 @@
 # Ignore these directories:
 /snakemake_paper/results
 /snakemake_paper/intermediate
-/snakemake_tutorial/data/*
+/snakemake_paper/data/*
+/snakemake_paper/.snakemake
 
 # Ignore temporary files
 /git_tutorial/.tmp
@@ -19,3 +20,4 @@
 # Ignore the fastq.gz and fastqfiles
 /snakemake_simple/trim_fastq/*.gz
 /snakemake_simple/trim_fastq/*.fastq
+/snakemake_simple/trim_fastq/.snakemake

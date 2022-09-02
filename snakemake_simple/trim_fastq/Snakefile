@@ -1,9 +1,10 @@
 rule trim_fastq:
     input: "{prefix}.fastq"
     output: temp("{prefix}.trimmed.fastq")
+    
     shell:
         "seqtk trimfq -b 5 -e 10 {input} > {output}"
-        
+
 rule gzip:
     input: "{prefix}.trimmed.fastq"
     output: "{prefix}.trimmed.fastq.gz"
