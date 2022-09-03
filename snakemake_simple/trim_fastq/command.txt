@@ -1,0 +1,16 @@
+## Running the simple snakemake from snakemake file
+
+conda env create -n snaketest1 -f environment.yml
+
+conda activate snaketest1
+
+snakemake --h
+ 
+## dry run
+
+snakemake -j1 -p -n {SRR935090,SRR935091}.trimmed.fastq.gz
+
+## main run
+snakemake -j1 -p {SRR935090,SRR935091}.trimmed.fastq.gz
+
+conda deactivate
